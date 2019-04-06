@@ -567,10 +567,10 @@ contract ERC721MintableComplete is ERC721Metadata {
         return owner;
     }
 
-    function test () public{
-        testNumb.add(1);
-        //return testNumb;
-    }
+    // function test () public{
+    //     testNumb.add(1);
+    //     //return testNumb;
+    // }
 }
 
 
