@@ -28,6 +28,7 @@ var HDWalletProvider = require('truffle-hdwallet-provider');
 
 var mnemonic = 'spirit supply whale amount human item harsh scare congress discover talent hamster';
 mnemonic = "tell foil harbor summer people put woman country opinion write first switch";
+// ganache-cli --mnemonic "tell foil harbor summer people put woman country opinion write first switch" -a 40
 module.exports = {
   networks: { 
     development: {

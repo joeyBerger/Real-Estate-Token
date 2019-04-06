@@ -172,7 +172,7 @@ contract ERC721 is Pausable, ERC165 {
         // TODO require the given address to not be the owner of the tokenId
         require(_tokenOwner[tokenId] == to, "Cannot transfer token to one's self");
         // TODO require the msg sender to be the owner of the contract or isApprovedForAll() to be true
-        require(_isApprovedOrOwner(msg.sender, tokenId) == true, "Sender must be owner of the contract");
+        require(_isApprovedOrOwner(msg.sender, tokenId) == true, "Sender must be owner of the contract");  //TODO: this is wrong
         // TODO add 'to' address to token approvals
         _tokenApprovals[tokenId] = to;
         // TODO emit Approval Event
@@ -485,7 +485,10 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
     // TODO: Create private vars for token _name, _symbol, and _baseTokenURI (string)
     string private _name;
     string private _symbol;
-    string private _baseTokenURI;
+
+    //string private _baseTokenURI;
+    string public _baseTokenURI;
+
     // TODO: create private mapping of tokenId's to token uri's called '_tokenURIs'
     mapping(uint256 => string) private _tokenURIs;
     // bytes4 private constant _INTERFACE_ID_ERC721_METADATA = 0x5b5e139f;
@@ -538,14 +541,17 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
 //      -takes in a 'to' address, tokenId, and tokenURI as parameters
 //      -returns a true boolean upon completion of the function
 //      -calls the superclass mint and setTokenURI functions
-contract CustomERC721Token is ERC721Metadata {
+contract ERC721MintableComplete is ERC721Metadata {
 
     string private baseTokenURI;
     address private owner; 
+    uint256 testNumb;
 
-    constructor(string memory name, string memory symbol, string memory baseTokenURI) public ERC721Metadata(name,symbol,baseTokenURI) {
+    constructor(string memory name, string memory symbol) public ERC721Metadata(name,symbol,baseTokenURI) {
         owner = msg.sender;
         baseTokenURI = 'https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/';
+        _baseTokenURI = 'https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/';
+        testNumb = 0;
     }
 
     function mint (address to, uint256 tokenId) public returns(bool success) {
@@ -554,6 +560,16 @@ contract CustomERC721Token is ERC721Metadata {
         super._mint(to, tokenId);
         setTokenURI(tokenId);
         success = true;
+    }
+
+    function returnContractOwner () public returns(address) {
+        require(msg.sender == owner, "Function must only called by contract owner.");
+        return owner;
+    }
+
+    function test () public{
+        testNumb.add(1);
+        //return testNumb;
     }
 }
 
