@@ -11,17 +11,17 @@
     "absolutePath": "/Users/joeyberger/Desktop/Udacity/Blockchain Nanodegree/GitHub Repos/Real-Estate-Token/eth-contracts/contracts/SolnSquareVerifier.sol",
     "exportedSymbols": {
       "SolnSquareVerifier": [
-        7477
+        7503
       ],
       "SquareVerifier": [
-        7476
+        7502
       ]
     },
-    "id": 7478,
+    "id": 7504,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 7475,
+        "id": 7501,
         "literals": [
           "solidity",
           ">=",
@@ -40,14 +40,14 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 7476,
+        "id": 7502,
         "linearizedBaseContracts": [
-          7476
+          7502
         ],
         "name": "SquareVerifier",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 7478,
+        "scope": 7504,
         "src": "142:32:3"
       },
       {
@@ -56,14 +56,14 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 7477,
+        "id": 7503,
         "linearizedBaseContracts": [
-          7477
+          7503
         ],
         "name": "SolnSquareVerifier",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 7478,
+        "scope": 7504,
         "src": "279:32:3"
       }
     ],
@@ -73,17 +73,17 @@
     "absolutePath": "/Users/joeyberger/Desktop/Udacity/Blockchain Nanodegree/GitHub Repos/Real-Estate-Token/eth-contracts/contracts/SolnSquareVerifier.sol",
     "exportedSymbols": {
       "SolnSquareVerifier": [
-        7477
+        7503
       ],
       "SquareVerifier": [
-        7476
+        7502
       ]
     },
-    "id": 7478,
+    "id": 7504,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 7475,
+        "id": 7501,
         "literals": [
           "solidity",
           ">=",
@@ -102,14 +102,14 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 7476,
+        "id": 7502,
         "linearizedBaseContracts": [
-          7476
+          7502
         ],
         "name": "SquareVerifier",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 7478,
+        "scope": 7504,
         "src": "142:32:3"
       },
       {
@@ -118,14 +118,14 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 7477,
+        "id": 7503,
         "linearizedBaseContracts": [
-          7477
+          7503
         ],
         "name": "SolnSquareVerifier",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 7478,
+        "scope": 7504,
         "src": "279:32:3"
       }
     ],
@@ -137,7 +137,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-04-06T02:31:24.110Z",
+  "updatedAt": "2019-04-09T14:22:02.587Z",
   "devdoc": {
     "methods": {}
   },

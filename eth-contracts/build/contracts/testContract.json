@@ -1,0 +1,322 @@
+{
+  "contractName": "testContract",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a72305820119281eb2e11712061028a58b83a6ecbf53f1c5f51d2ed6ca1048e9f8f65d8c10029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a72305820119281eb2e11712061028a58b83a6ecbf53f1c5f51d2ed6ca1048e9f8f65d8c10029",
+  "sourceMap": "62:267:4:-;;;168:29;8:9:-1;5:2;;;30:1;27;20:12;5:2;168:29:4;62:267;;;;;;",
+  "deployedSourceMap": "62:267:4:-;;;;;",
+  "source": "pragma solidity ^0.5.0;\n// pragma experimental ABIEncoderV2;\n\ncontract testContract {\n\n    struct myStruct {\n        uint256 something;\n    }\n\n    uint256 [] arr;\n\n    constructor() public {\n\n    }\n\n    // function testFunc(myStruct memory d) public {\n\n    // }\n\n\n    // function testFunc(uint [] memory jo) public {\n\n    // }\n\n}",
+  "sourcePath": "/Users/joeyberger/Desktop/Udacity/Blockchain Nanodegree/GitHub Repos/Real-Estate-Token/eth-contracts/contracts/test.sol",
+  "ast": {
+    "absolutePath": "/Users/joeyberger/Desktop/Udacity/Blockchain Nanodegree/GitHub Repos/Real-Estate-Token/eth-contracts/contracts/test.sol",
+    "exportedSymbols": {
+      "testContract": [
+        7516
+      ]
+    },
+    "id": 7517,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7505,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 7516,
+        "linearizedBaseContracts": [
+          7516
+        ],
+        "name": "testContract",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "testContract.myStruct",
+            "id": 7508,
+            "members": [
+              {
+                "constant": false,
+                "id": 7507,
+                "name": "something",
+                "nodeType": "VariableDeclaration",
+                "scope": 7508,
+                "src": "117:17:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 7506,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "117:7:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "myStruct",
+            "nodeType": "StructDefinition",
+            "scope": 7516,
+            "src": "91:50:4",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 7511,
+            "name": "arr",
+            "nodeType": "VariableDeclaration",
+            "scope": 7516,
+            "src": "147:14:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+              "typeString": "uint256[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 7509,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "147:7:4",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "id": 7510,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "147:10:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                "typeString": "uint256[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 7514,
+              "nodeType": "Block",
+              "src": "189:8:4",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 7515,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7512,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "179:2:4"
+            },
+            "returnParameters": {
+              "id": 7513,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "189:0:4"
+            },
+            "scope": 7516,
+            "src": "168:29:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 7517,
+        "src": "62:267:4"
+      }
+    ],
+    "src": "0:329:4"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/joeyberger/Desktop/Udacity/Blockchain Nanodegree/GitHub Repos/Real-Estate-Token/eth-contracts/contracts/test.sol",
+    "exportedSymbols": {
+      "testContract": [
+        7516
+      ]
+    },
+    "id": 7517,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7505,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 7516,
+        "linearizedBaseContracts": [
+          7516
+        ],
+        "name": "testContract",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "testContract.myStruct",
+            "id": 7508,
+            "members": [
+              {
+                "constant": false,
+                "id": 7507,
+                "name": "something",
+                "nodeType": "VariableDeclaration",
+                "scope": 7508,
+                "src": "117:17:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 7506,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "117:7:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "myStruct",
+            "nodeType": "StructDefinition",
+            "scope": 7516,
+            "src": "91:50:4",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 7511,
+            "name": "arr",
+            "nodeType": "VariableDeclaration",
+            "scope": 7516,
+            "src": "147:14:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+              "typeString": "uint256[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 7509,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "147:7:4",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "id": 7510,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "147:10:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                "typeString": "uint256[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 7514,
+              "nodeType": "Block",
+              "src": "189:8:4",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 7515,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7512,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "179:2:4"
+            },
+            "returnParameters": {
+              "id": 7513,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "189:0:4"
+            },
+            "scope": 7516,
+            "src": "168:29:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 7517,
+        "src": "62:267:4"
+      }
+    ],
+    "src": "0:329:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.7+commit.6da8b019.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.2",
+  "updatedAt": "2019-04-09T14:22:02.587Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
