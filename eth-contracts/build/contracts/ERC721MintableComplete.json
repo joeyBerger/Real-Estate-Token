@@ -30508,7 +30508,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-04-09T14:22:02.364Z",
+  "updatedAt": "2019-04-10T00:57:59.576Z",
   "devdoc": {
     "methods": {
       "isApprovedForAll(address,address)": {
