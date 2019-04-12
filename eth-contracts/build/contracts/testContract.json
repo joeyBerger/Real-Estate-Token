@@ -18,14 +18,14 @@
     "absolutePath": "/Users/joeyberger/Desktop/Udacity/Blockchain Nanodegree/GitHub Repos/Real-Estate-Token/eth-contracts/contracts/test.sol",
     "exportedSymbols": {
       "testContract": [
-        7516
+        7767
       ]
     },
-    "id": 7517,
+    "id": 7768,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 7505,
+        "id": 7756,
         "literals": [
           "solidity",
           "^",
@@ -41,23 +41,23 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 7516,
+        "id": 7767,
         "linearizedBaseContracts": [
-          7516
+          7767
         ],
         "name": "testContract",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "testContract.myStruct",
-            "id": 7508,
+            "id": 7759,
             "members": [
               {
                 "constant": false,
-                "id": 7507,
+                "id": 7758,
                 "name": "something",
                 "nodeType": "VariableDeclaration",
-                "scope": 7508,
+                "scope": 7759,
                 "src": "117:17:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -66,7 +66,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 7506,
+                  "id": 7757,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "117:7:4",
@@ -81,16 +81,16 @@
             ],
             "name": "myStruct",
             "nodeType": "StructDefinition",
-            "scope": 7516,
+            "scope": 7767,
             "src": "91:50:4",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 7511,
+            "id": 7762,
             "name": "arr",
             "nodeType": "VariableDeclaration",
-            "scope": 7516,
+            "scope": 7767,
             "src": "147:14:4",
             "stateVariable": true,
             "storageLocation": "default",
@@ -100,7 +100,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 7509,
+                "id": 7760,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
                 "src": "147:7:4",
@@ -109,7 +109,7 @@
                   "typeString": "uint256"
                 }
               },
-              "id": 7510,
+              "id": 7761,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "147:10:4",
@@ -123,38 +123,38 @@
           },
           {
             "body": {
-              "id": 7514,
+              "id": 7765,
               "nodeType": "Block",
               "src": "189:8:4",
               "statements": []
             },
             "documentation": null,
-            "id": 7515,
+            "id": 7766,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 7512,
+              "id": 7763,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "179:2:4"
             },
             "returnParameters": {
-              "id": 7513,
+              "id": 7764,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "189:0:4"
             },
-            "scope": 7516,
+            "scope": 7767,
             "src": "168:29:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 7517,
+        "scope": 7768,
         "src": "62:267:4"
       }
     ],
@@ -164,14 +164,14 @@
     "absolutePath": "/Users/joeyberger/Desktop/Udacity/Blockchain Nanodegree/GitHub Repos/Real-Estate-Token/eth-contracts/contracts/test.sol",
     "exportedSymbols": {
       "testContract": [
-        7516
+        7767
       ]
     },
-    "id": 7517,
+    "id": 7768,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 7505,
+        "id": 7756,
         "literals": [
           "solidity",
           "^",
@@ -187,23 +187,23 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 7516,
+        "id": 7767,
         "linearizedBaseContracts": [
-          7516
+          7767
         ],
         "name": "testContract",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "testContract.myStruct",
-            "id": 7508,
+            "id": 7759,
             "members": [
               {
                 "constant": false,
-                "id": 7507,
+                "id": 7758,
                 "name": "something",
                 "nodeType": "VariableDeclaration",
-                "scope": 7508,
+                "scope": 7759,
                 "src": "117:17:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -212,7 +212,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 7506,
+                  "id": 7757,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "117:7:4",
@@ -227,16 +227,16 @@
             ],
             "name": "myStruct",
             "nodeType": "StructDefinition",
-            "scope": 7516,
+            "scope": 7767,
             "src": "91:50:4",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 7511,
+            "id": 7762,
             "name": "arr",
             "nodeType": "VariableDeclaration",
-            "scope": 7516,
+            "scope": 7767,
             "src": "147:14:4",
             "stateVariable": true,
             "storageLocation": "default",
@@ -246,7 +246,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 7509,
+                "id": 7760,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
                 "src": "147:7:4",
@@ -255,7 +255,7 @@
                   "typeString": "uint256"
                 }
               },
-              "id": 7510,
+              "id": 7761,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "147:10:4",
@@ -269,38 +269,38 @@
           },
           {
             "body": {
-              "id": 7514,
+              "id": 7765,
               "nodeType": "Block",
               "src": "189:8:4",
               "statements": []
             },
             "documentation": null,
-            "id": 7515,
+            "id": 7766,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 7512,
+              "id": 7763,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "179:2:4"
             },
             "returnParameters": {
-              "id": 7513,
+              "id": 7764,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "189:0:4"
             },
-            "scope": 7516,
+            "scope": 7767,
             "src": "168:29:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 7517,
+        "scope": 7768,
         "src": "62:267:4"
       }
     ],
@@ -312,7 +312,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-04-10T00:57:59.789Z",
+  "updatedAt": "2019-04-11T04:53:19.120Z",
   "devdoc": {
     "methods": {}
   },

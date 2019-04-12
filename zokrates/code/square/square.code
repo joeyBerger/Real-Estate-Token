@@ -1,3 +1,3 @@
 def main(private field input, field output) -> (field):
-  field verifierEquation = if input * input == output then 1 else 0 fi
-  return verifierEquation
+  field result = if input * input == output then 1 else 0 fi
+  return result

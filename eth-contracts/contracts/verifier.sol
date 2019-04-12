@@ -623,6 +623,7 @@ contract Verifier {
             uint[2] memory k,
             uint[2] memory input
         ) public returns (bool r) {
+        // ) external returns (bool r) {
         Proof memory proof;
         proof.A = Pairing.G1Point(a[0], a[1]);
         proof.A_p = Pairing.G1Point(a_p[0], a_p[1]);

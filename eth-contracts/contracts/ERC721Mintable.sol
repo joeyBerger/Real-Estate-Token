@@ -57,7 +57,7 @@ contract Pausable is Ownable {
     
     //Function Modifiers
     modifier paused() {
-        require(_paused == true, "Contract must be currently paused");
+        require(_paused == true, "Contract must be currently paused");  //TODO: need to actually use
         _;
     }
 
@@ -545,13 +545,11 @@ contract ERC721MintableComplete is ERC721Metadata {
 
     string private baseTokenURI;
     address private owner; 
-    uint256 testNumb;
 
     constructor(string memory name, string memory symbol) public ERC721Metadata(name,symbol,baseTokenURI) {
         owner = msg.sender;
         baseTokenURI = 'https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/';
         _baseTokenURI = 'https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/';
-        testNumb = 0;
     }
 
     function mint (address to, uint256 tokenId) public returns(bool success) {
@@ -566,11 +564,6 @@ contract ERC721MintableComplete is ERC721Metadata {
         require(msg.sender == owner, "Function must only called by contract owner.");
         return owner;
     }
-
-    // function test () public{
-    //     testNumb.add(1);
-    //     //return testNumb;
-    // }
 }
 
 
