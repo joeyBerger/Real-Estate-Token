@@ -6,11 +6,12 @@ import './verifier.sol';
 // TODO define another contract named SolnSquareVerifier that inherits from your ERC721Mintable class
 contract SolnSquareVerifier is ERC721MintableComplete, Verifier {
 
-    VerifierInterface verifierInterface;
+    //VerifierInterface verifierInterface;
     uint256 currentIndex;
 
-    constructor(address verifierAddress, string memory name, string memory symbol) ERC721MintableComplete(name, symbol) public {         
-        verifierInterface = VerifierInterface(verifierAddress);   
+    constructor(string memory name, string memory symbol) ERC721MintableComplete(name, symbol) public {         
+        //verifierInterface = VerifierInterface(verifierAddress);   
+        //verifierInterface = VerifierInterface(verifierAddress);   
         currentIndex = 0;     
     }
 
@@ -94,38 +95,38 @@ contract SolnSquareVerifier is ERC721MintableComplete, Verifier {
 // TODO define a contract call to the zokrates generated solidity contract <Verifier> or <renamedVerifier>
 
 //Data Interface
-contract VerifierInterface //is Verifier  
-{
-    function verifyTx(
-            uint[2] memory a,
-            uint[2] memory a_p,
-            uint[2][2] memory b,
-            uint[2] memory b_p,
-            uint[2] memory c,
-            uint[2] memory c_p,
-            uint[2] memory h,
-            uint[2] memory k,
-            uint[2] memory input
-        ) public returns (bool r) 
-        {
-            r = true;
-            // r = verifyTx(
-            //     a,
-            //     a_p,
-            //     b,
-            //     b_p,
-            //     c,
-            //     c_p,
-            //     h,
-            //     k,
-            //     input
-            // );
-        }
+// contract VerifierInterface //is Verifier  
+// {
+//     function verifyTx(
+//             uint[2] memory a,
+//             uint[2] memory a_p,
+//             uint[2][2] memory b,
+//             uint[2] memory b_p,
+//             uint[2] memory c,
+//             uint[2] memory c_p,
+//             uint[2] memory h,
+//             uint[2] memory k,
+//             uint[2] memory input
+//         ) public returns (bool r) 
+//         {
+//             r = true;
+//             // r = verifyTx(
+//             //     a,
+//             //     a_p,
+//             //     b,
+//             //     b_p,
+//             //     c,
+//             //     c_p,
+//             //     h,
+//             //     k,
+//             //     input
+//             // );
+//         }
 
-    function test() public returns(bool) {
-        return true;
-    }
-}
+//     function test() public returns(bool) {
+//         return true;
+//     }
+// }
 
 // contract SquareVerifier {
 //     function verifyTxTEST(

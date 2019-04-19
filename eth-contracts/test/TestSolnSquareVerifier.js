@@ -13,7 +13,8 @@ contract('TestSquareVerifier', accounts => {
 
     describe('add verification and mint new token', function () {
         beforeEach(async function () { 
-            this.contract = await SolnSquareVerifier.new(account_one,name,symbol);
+            //this.contract = await SolnSquareVerifier.new(account_one,name,symbol);
+            this.contract = await SolnSquareVerifier.new(name,symbol);
         })
 
         it('valid proof is added and new token minted', async function () { 

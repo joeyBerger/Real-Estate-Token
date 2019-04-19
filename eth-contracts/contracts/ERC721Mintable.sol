@@ -11,7 +11,7 @@ contract Ownable {
     //  1) create a private '_owner' variable of type address with a public getter function
     address private _owner;
     //  2) create an internal constructor that sets the _owner var to the creater of the contract 
-    constructor() public {
+    constructor() internal {
         _owner = msg.sender;
         emit OwnershipTransfered(_owner);
     }
@@ -38,6 +38,10 @@ contract Ownable {
         // TODO add functionality to transfer control of the contract to a newOwner.
         // make sure the new owner is a real address
         _owner = newOwner;
+    }
+
+    function getOwner() public returns (address) {
+        return _owner;
     }
 }
 
@@ -159,12 +163,18 @@ contract ERC721 is Pausable, ERC165 {
     function balanceOf(address owner) public view returns (uint256) {
         // TODO return the token balance of given address
         // TIP: remember the functions to use for Counters. you can refresh yourself with the link above
+        require(owner != address(0));
         return _ownedTokensCount[owner].current();
     }
 
     function ownerOf(uint256 tokenId) public view returns (address) {
         // TODO return the owner of the given tokenId
-        return _tokenOwner[tokenId];
+        
+        address owner = _tokenOwner[tokenId]; //TODO: template code, remove
+        require(owner != address(0)); //TODO: template code, remove
+        return owner; //TODO: template code, remove
+        
+        //return _tokenOwner[tokenId];
     }
 
 //    @dev Approves another address to transfer the given token ID
@@ -181,7 +191,7 @@ contract ERC721 is Pausable, ERC165 {
 
     function getApproved(uint256 tokenId) public view returns (address) {
         // TODO return token approval if it exists
-        //require(_tokenApprovals[tokenId] != address(0), "Token does not exist by this ID");
+        require(_exists(tokenId));
         return _tokenApprovals[tokenId];
     }
 
@@ -561,9 +571,16 @@ contract ERC721MintableComplete is ERC721Metadata {
     }
 
     function returnContractOwner () public returns(address) {
-        require(msg.sender == owner, "Function must only called by contract owner.");
+        //require(msg.sender == owner, "Function must only called by contract owner.");
         return owner;
     }
+
+        function testFunc () public returns(bool) {
+        //require(msg.sender == owner, "Function must only called by contract owner.");
+        return true;
+    }
+
+
 }
 
 
