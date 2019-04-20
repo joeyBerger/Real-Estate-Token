@@ -5,13 +5,12 @@ import './verifier.sol';
 
 // TODO define another contract named SolnSquareVerifier that inherits from your ERC721Mintable class
 contract SolnSquareVerifier is ERC721MintableComplete, Verifier {
-
-    //VerifierInterface verifierInterface;
+    
     uint256 currentIndex;
+    Verifier verifierInstance;
 
-    constructor(string memory name, string memory symbol) ERC721MintableComplete(name, symbol) public {         
-        //verifierInterface = VerifierInterface(verifierAddress);   
-        //verifierInterface = VerifierInterface(verifierAddress);   
+    constructor(address verifierAddress, string memory name, string memory symbol) ERC721MintableComplete(name, symbol) public {         
+        verifierInstance = Verifier(verifierAddress);
         currentIndex = 0;     
     }
 
@@ -55,15 +54,7 @@ contract SolnSquareVerifier is ERC721MintableComplete, Verifier {
             uint[2] memory input
         ) public solutionDoesNotExists(input[0],input[1]) returns (bool r)
         {
-            //r = verifierInterface.verifyTx(a,a_p,b,b_p,c,c_p,h,k,input);
-            // r = verifierInterface.test();
-            // if (r) {
-            //     // Solution memory newSolution = Solution(index,solAddress);
-            //     // emit SolutionAdded(solAddress,index);
-            //     // currentIndex.add(1);
-            // }         
-            
-            r = verifyTx(a,a_p,b,b_p,c,c_p,h,k,input);
+            r = verifierInstance.verifyTx(a,a_p,b,b_p,c,c_p,h,k,input);
             if (r) {
                 Solution memory newSolution = Solution(currentIndex,msg.sender);
                 emit SolutionAdded(msg.sender,currentIndex);                
@@ -84,77 +75,13 @@ contract SolnSquareVerifier is ERC721MintableComplete, Verifier {
         bytes32 hashResult = hashSolution(input[0],input[1]);
         acceptedSolutions[hashResult] = SolutionState.Used;
         currentIndex.add(1);
-        return true;
+        return r;
     }
 
     function hashSolution(uint a, uint b) private returns(bytes32 hashedSolution) {
         hashedSolution = keccak256(abi.encodePacked(a+b, a*b));
     }   
 }
-
-// TODO define a contract call to the zokrates generated solidity contract <Verifier> or <renamedVerifier>
-
-//Data Interface
-// contract VerifierInterface //is Verifier  
-// {
-//     function verifyTx(
-//             uint[2] memory a,
-//             uint[2] memory a_p,
-//             uint[2][2] memory b,
-//             uint[2] memory b_p,
-//             uint[2] memory c,
-//             uint[2] memory c_p,
-//             uint[2] memory h,
-//             uint[2] memory k,
-//             uint[2] memory input
-//         ) public returns (bool r) 
-//         {
-//             r = true;
-//             // r = verifyTx(
-//             //     a,
-//             //     a_p,
-//             //     b,
-//             //     b_p,
-//             //     c,
-//             //     c_p,
-//             //     h,
-//             //     k,
-//             //     input
-//             // );
-//         }
-
-//     function test() public returns(bool) {
-//         return true;
-//     }
-// }
-
-// contract SquareVerifier {
-//     function verifyTxTEST(
-//         uint[2] memory a,
-//         uint[2] memory a_p,
-//         uint[2][2] memory b,
-//         uint[2] memory b_p,
-//         uint[2] memory c,
-//         uint[2] memory c_p,
-//         uint[2] memory h,
-//         uint[2] memory k,
-//         uint[2] memory input
-//     ) public returns (bool r) 
-//     {
-//         //r = true;
-//         r = verifyTx(
-//             a,
-//             a_p,
-//             b,
-//             b_p,
-//             c,
-//             c_p,
-//             h,
-//             k,
-//             input
-//         );
-//     }
-// }
 
 
 

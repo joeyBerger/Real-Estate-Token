@@ -47,8 +47,8 @@ contract('TestERC721Mintable', accounts => {
             catch(e) {
                 console.log(e);
             }
-            assert.equal(tokenBalance1.toString(), 1,"Total supply should match the current token Id");  //TODO: change string name
-            assert.equal(tokenBalance2.toString(), 2,"Total supply should match the current token Id");  //TODO: change string name
+            assert.equal(tokenBalance1.toString(), 1,"Total supply should match the current token Id");
+            assert.equal(tokenBalance2.toString(), 2,"Total supply should match the current token Id");
         })
 
         // token uri should be complete i.e: https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/1
@@ -76,8 +76,8 @@ contract('TestERC721Mintable', accounts => {
             catch(e) {
                 console.log(e);
             }
-            assert.equal(tokenBalance1.toString(), 2,"Total supply should match the current token Id");  //TODO: change string name
-            assert.equal(tokenBalance2.toString(), 1,"Total supply should match the current token Id");  //TODO: change string name
+            assert.equal(tokenBalance1.toString(), 2,"Total supply should match the current token Id");
+            assert.equal(tokenBalance2.toString(), 1,"Total supply should match the current token Id");
         })
 
         it('should not transfer token if not owner', async function () { 

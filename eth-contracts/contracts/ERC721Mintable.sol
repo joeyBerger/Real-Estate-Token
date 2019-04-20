@@ -76,13 +76,13 @@ contract Pausable is Ownable {
     event Unpaused(address callingAddress);
 
     //Functions
-    function setPauseState(bool ipaused) public onlyOwner{
-        _paused = ipaused;
+    function setPauseState(bool ipaused) public onlyOwner{        
         if (ipaused) {
             emit Paused(msg.sender);
         } else {
             emit Unpaused(msg.sender);
-        }        
+        }  
+        _paused = ipaused;      
     }   
 }
 
@@ -168,25 +168,26 @@ contract ERC721 is Pausable, ERC165 {
     }
 
     function ownerOf(uint256 tokenId) public view returns (address) {
-        // TODO return the owner of the given tokenId
-        
-        address owner = _tokenOwner[tokenId]; //TODO: template code, remove
-        require(owner != address(0)); //TODO: template code, remove
-        return owner; //TODO: template code, remove
-        
-        //return _tokenOwner[tokenId];
+        // TODO return the owner of the given tokenId        
+        address owner = _tokenOwner[tokenId];
+        require(owner != address(0));
+        return owner;
     }
 
 //    @dev Approves another address to transfer the given token ID
     function approve(address to, uint256 tokenId) public {        
         // TODO require the given address to not be the owner of the tokenId
-        require(_tokenOwner[tokenId] == to, "Cannot transfer token to one's self");
+        address owner = ownerOf(tokenId);
+        require(to != owner);
+        //require(_tokenOwner[tokenId] == to, "Cannot transfer token to one's self");
         // TODO require the msg sender to be the owner of the contract or isApprovedForAll() to be true
-        require(_isApprovedOrOwner(msg.sender, tokenId) == true, "Sender must be owner of the contract");  //TODO: this is wrong
+        //require(_isApprovedOrOwner(msg.sender, tokenId) == true, "Sender must be owner of the contract");  //TODO: this is wrong
+        require(msg.sender == owner || isApprovedForAll(owner, msg.sender), "Sender must be owner of the contract");
         // TODO add 'to' address to token approvals
         _tokenApprovals[tokenId] = to;
         // TODO emit Approval Event
-        emit Approval(_tokenOwner[tokenId], to, tokenId);
+        //emit Approval(_tokenOwner[tokenId], to, tokenId);
+        emit Approval(owner, to, tokenId);
     }
 
     function getApproved(uint256 tokenId) public view returns (address) {
@@ -495,9 +496,7 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
     // TODO: Create private vars for token _name, _symbol, and _baseTokenURI (string)
     string private _name;
     string private _symbol;
-
-    //string private _baseTokenURI;
-    string public _baseTokenURI;
+    string private _baseTokenURI;
 
     // TODO: create private mapping of tokenId's to token uri's called '_tokenURIs'
     mapping(uint256 => string) private _tokenURIs;
@@ -541,6 +540,10 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
         require(_exists(tokenId));
         _tokenURIs[tokenId] = strConcat(_baseTokenURI,uint2str(tokenId));
     }
+
+    function setBaseTokenURI(string memory ibaseTokenURI) internal {
+        _baseTokenURI = ibaseTokenURI;
+    }
 }
 
 //  TODO's: Create CustomERC721Token contract that inherits from the ERC721Metadata contract. You can name this contract as you please
@@ -559,7 +562,7 @@ contract ERC721MintableComplete is ERC721Metadata {
     constructor(string memory name, string memory symbol) public ERC721Metadata(name,symbol,baseTokenURI) {
         owner = msg.sender;
         baseTokenURI = 'https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/';
-        _baseTokenURI = 'https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/';
+        setBaseTokenURI(baseTokenURI);
     }
 
     function mint (address to, uint256 tokenId) public returns(bool success) {
@@ -571,16 +574,9 @@ contract ERC721MintableComplete is ERC721Metadata {
     }
 
     function returnContractOwner () public returns(address) {
-        //require(msg.sender == owner, "Function must only called by contract owner.");
+        require(msg.sender == owner, "Function must only called by contract owner.");
         return owner;
     }
-
-        function testFunc () public returns(bool) {
-        //require(msg.sender == owner, "Function must only called by contract owner.");
-        return true;
-    }
-
-
 }
 
 
