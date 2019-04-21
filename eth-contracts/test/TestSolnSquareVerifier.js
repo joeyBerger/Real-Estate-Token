@@ -13,7 +13,7 @@ contract('TestSquareVerifier', accounts => {
 
     describe('add verification and mint new token', function () {
         beforeEach(async function () { 
-            this.contract = await SolnSquareVerifier.new(account_one,name,symbol);
+            this.contract = await SolnSquareVerifier.new(name,symbol);
             //this.contract = await SolnSquareVerifier.new(name,symbol);
         })
 
@@ -24,7 +24,7 @@ contract('TestSquareVerifier', accounts => {
                                                            GeneratedProof.proof["H"],GeneratedProof.proof["K"],GeneratedProof.input,{from:account_one});
             }
             catch(e) {
-                console.log(e);
+                console.log("error with add solition",e);
             }
             
             let result = true;

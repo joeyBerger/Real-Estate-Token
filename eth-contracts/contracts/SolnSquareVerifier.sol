@@ -3,30 +3,28 @@ pragma solidity >=0.4.21 <0.6.0;
 import './ERC721Mintable.sol';
 import './verifier.sol';
 
-// TODO define another contract named SolnSquareVerifier that inherits from your ERC721Mintable class
 contract SolnSquareVerifier is ERC721MintableComplete, Verifier {
     
     uint256 currentIndex;
-    Verifier verifierInstance;
 
-    constructor(address verifierAddress, string memory name, string memory symbol) ERC721MintableComplete(name, symbol) public {         
-        verifierInstance = Verifier(verifierAddress);
+    constructor(string memory name, string memory symbol) ERC721MintableComplete(name, symbol) public {         
         currentIndex = 0;     
     }
 
-    // TODO define a solutions struct that can hold an index & an address
     struct Solution {
         uint256 index;
         address solAddress;
     }
 
+    mapping(uint256 => Solution) private storedSolutions; 
+
     //enumerator to track state of solution
     enum SolutionState { Unverfied, Verified, Used }
 
-    // TODO define a mapping to store unique solutions submitted
+    // mapping to store unique solutions submitted
     mapping(bytes32 => SolutionState) private acceptedSolutions;
 
-    // TODO Create an event to emit when a solution is added
+    // event to emit when a solution is added
     event SolutionAdded(address indexed solAddress, uint256 indexed index);
 
     modifier verifiedSolutionNotUsed(uint a, uint b) {
@@ -41,7 +39,7 @@ contract SolnSquareVerifier is ERC721MintableComplete, Verifier {
         _;
     }
 
-    // TODO Create a function to add the solutions to the array and emit the event
+    // function to add the solutions to the array and emit the event
     function addSolution(
             uint[2] memory a,
             uint[2] memory a_p,
@@ -54,22 +52,16 @@ contract SolnSquareVerifier is ERC721MintableComplete, Verifier {
             uint[2] memory input
         ) public solutionDoesNotExists(input[0],input[1]) returns (bool r)
         {
-            r = verifierInstance.verifyTx(a,a_p,b,b_p,c,c_p,h,k,input);
+            r = verifyTx(a,a_p,b,b_p,c,c_p,h,k,input);
             if (r) {
                 Solution memory newSolution = Solution(currentIndex,msg.sender);
+                storedSolutions[currentIndex] = newSolution;
                 emit SolutionAdded(msg.sender,currentIndex);                
                 bytes32 hashResult = hashSolution(input[0],input[1]);
                 acceptedSolutions[hashResult] = SolutionState.Verified;
             }
         }
     
-
-    // TODO Create a function to mint new NFT only after the solution has been verified
-    //  - make sure the solution is unique (has not been used before)
-    //  - make sure you handle metadata as well as tokenSupply
-    //function mintNewToken (address to, uint256 tokenId) public returns(bool success) {
-
-    //TODO:need to satisfy new solution
     function mintNewToken (uint[2] memory input, address to) verifiedSolutionNotUsed(input[0],input[1]) public returns (bool r) {
         r = mint(to,currentIndex);
         bytes32 hashResult = hashSolution(input[0],input[1]);
@@ -78,7 +70,7 @@ contract SolnSquareVerifier is ERC721MintableComplete, Verifier {
         return r;
     }
 
-    function hashSolution(uint a, uint b) private returns(bytes32 hashedSolution) {
+    function hashSolution(uint a, uint b) private pure returns(bytes32 hashedSolution) {
         hashedSolution = keccak256(abi.encodePacked(a+b, a*b));
     }   
 }
