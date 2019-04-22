@@ -19,9 +19,8 @@ Access to an operating system capable of internet, browser and IDE access.
 * To test, start another terminal instance and `cd eth-contracts/`. Run `truffle test`, and all 3 javascript tests will commence.
 
 ## OpenSea Demonstration
-* .png showin the 5 tokens sold:
-<!-- ![Alt text](/OpenSeaRef.ong?raw=true "OpenSeaRef") -->
-![Screenshot](OpenSeaRef.png)
+* .png showing 5 tokens sold:
+![OpenSeaRef](OpenSeaRef.png)
 
 
 ## Built With
