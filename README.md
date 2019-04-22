@@ -18,9 +18,10 @@ Access to an operating system capable of internet, browser and IDE access.
 * Navigate to the root folder and `cd eth-contracts/`. Start Ganache by running `ganache-cli`.
 * To test, start another terminal instance and `cd eth-contracts/`. Run `truffle test`, and all 3 javascript tests will commence.
 
-#### Running the web application
-##### Login To Metamask
-* In order to interact with this DAPP, login to [Metamask](https://metamask.io/).
+## OpenSea Demonstration
+* .png showin the 5 tokens sold:
+![Alt text](/OpenSeaRef.ong?raw=true "OpenSeaRef")
+
 
 ## Built With
 
