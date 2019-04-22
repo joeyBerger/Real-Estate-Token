@@ -1,5 +1,4 @@
 var ERC721MintableComplete = artifacts.require('ERC721MintableComplete');
-// var TestSquareVerifier = artifacts.require('Verifier');
 var GeneratedProof = require('../../zokrates/code/square/proof.json');
 var SolnSquareVerifier = artifacts.require('SolnSquareVerifier');
 
@@ -14,7 +13,6 @@ contract('TestSquareVerifier', accounts => {
     describe('add verification and mint new token', function () {
         beforeEach(async function () { 
             this.contract = await SolnSquareVerifier.new(name,symbol);
-            //this.contract = await SolnSquareVerifier.new(name,symbol);
         })
 
         it('valid proof is added and new token minted', async function () { 

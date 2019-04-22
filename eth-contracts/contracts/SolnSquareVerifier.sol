@@ -62,6 +62,7 @@ contract SolnSquareVerifier is ERC721MintableComplete, Verifier {
             }
         }
     
+    //function to mint new token, calls inherited contract ERC721Mintable.sol, returns successful mint transaction
     function mintNewToken (uint[2] memory input, address to) verifiedSolutionNotUsed(input[0],input[1]) public returns (bool r) {
         r = mint(to,currentIndex);
         bytes32 hashResult = hashSolution(input[0],input[1]);
@@ -70,7 +71,9 @@ contract SolnSquareVerifier is ERC721MintableComplete, Verifier {
         return r;
     }
 
+    //return hashed solution using inputs
     function hashSolution(uint a, uint b) private pure returns(bytes32 hashedSolution) {
+        //custom hash equation for storage purposes
         hashedSolution = keccak256(abi.encodePacked(a+b, a*b));
     }   
 }

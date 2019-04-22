@@ -12,6 +12,7 @@ contract Ownable {
         _owner = msg.sender;
         emit OwnershipTransfered(_owner);
     }
+
     //Function Modifiers
     modifier onlyOwner() {
         require(msg.sender == _owner, "Account must belong to contract owner");
@@ -195,14 +196,10 @@ contract ERC721 is Pausable, ERC165 {
         return _operatorApprovals[owner][operator];
     }
 
+    //function to transfer a token, provided the ower approves
     function transferFrom(address from, address to, uint256 tokenId) public {
         require(_isApprovedOrOwner(msg.sender, tokenId));
-
         _transferFrom(from, to, tokenId);
-    }
-
-    function safeTransferFrom(address from, address to, uint256 tokenId) public {
-        safeTransferFrom(from, to, tokenId, "");
     }
 
     function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory _data) public {
@@ -468,12 +465,12 @@ contract ERC721Enumerable is ERC165, ERC721 {
 
 contract ERC721Metadata is ERC721Enumerable, usingOraclize {
     
-    // TODO: Create private vars for token _name, _symbol, and _baseTokenURI (string)
+    //private vars for token _name, _symbol, and _baseTokenURI (string)
     string private _name;
     string private _symbol;
     string private _baseTokenURI;
 
-    // TODO: create private mapping of tokenId's to token uri's called '_tokenURIs'
+    //private mapping of tokenId's to token uri's called '_tokenURIs'
     mapping(uint256 => string) private _tokenURIs;
     // bytes4 private constant _INTERFACE_ID_ERC721_METADATA = 0x5b5e139f;
     /*
@@ -483,7 +480,6 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
      *     bytes4(keccak256('tokenURI(uint256)'))
      */
 
-
     constructor (string memory name, string memory symbol, string memory baseTokenURI) public {
         // set instance var values
         _name = name;
@@ -492,25 +488,28 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
         //_registerInterface(_INTERFACE_ID_ERC721_METADATA);
     }
 
+    //return name
     function name() view public returns (string memory) {
         return _name;        
     }
 
+    //return symbol
     function symbol() view public returns (string memory) {
         return _symbol;        
     }
 
+    //return baseTokenURI
     function baseTokenURI() view public returns (string memory) {
         return _baseTokenURI;        
     }
 
+    //return tokenURI
     function tokenURI(uint256 tokenId) external view returns (string memory) {
         require(_exists(tokenId));
         return _tokenURIs[tokenId];
     }
 
-
-    // Create an internal function to set the tokenURI of a specified tokenId
+    // internal function to set the tokenURI of a specified tokenId
     // require the token exists before setting
     function setTokenURI(uint256 tokenId) internal {        
         require(_exists(tokenId));
@@ -518,7 +517,7 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
     }
 }
 
-//  Create CustomERC721Token contract that inherits from the ERC721Metadata contract. You can name this contract as you please
+// ERC721MintableComplete contract that inherits from the ERC721Metadata contract. 
 contract ERC721MintableComplete is ERC721Metadata {
     address private tokenOwner; 
 

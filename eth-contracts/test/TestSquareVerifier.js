@@ -36,7 +36,8 @@ contract('TestSquareVerifier', accounts => {
             }
             assert.equal(result, false, "Incorrect hash values should not result in verification");
         })
-
+        
+        // Test verification with incorrect inputs
         it('verification should not pass if incorrect inputs are provided', async function () { 
             let result = true;
             let fakeInput = ['6','2'];
