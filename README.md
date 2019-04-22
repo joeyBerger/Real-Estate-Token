@@ -8,7 +8,8 @@ Once the contract was migrated to Rinkeby, 10 new tokens were minted and 5 were 
 ## Project Specifics
 * The contract address is: [0x5D588af153Ef3F0578D8B814DD91f9f3a2B503b0](https://rinkeby.etherscan.io/address/0x5D588af153Ef3F0578D8B814DD91f9f3a2B503b0)
 * The account used to generate the contract is: [0x27D8D15CbC94527cAdf5eC14B69519aE23288B95](https://rinkeby.etherscan.io/address/0x27D8D15CbC94527cAdf5eC14B69519aE23288B95)
-*  The purchasing account address is: [0x018C2daBef4904ECbd7118350A0c54DbeaE3549A](https://rinkeby.etherscan.io/address/0x018C2daBef4904ECbd7118350A0c54DbeaE3549A)
+* The purchasing account address is: [0x018C2daBef4904ECbd7118350A0c54DbeaE3549A](https://rinkeby.etherscan.io/address/0x018C2daBef4904ECbd7118350A0c54DbeaE3549A)
+* The OpenSea Marketplace URL is: [https://rinkeby.opensea.io/category/udacityrealestatetoken](https://rinkeby.opensea.io/category/udacityrealestatetoken)
 
 ## Prerequisites
 Access to an operating system capable of internet, browser and IDE access.
