@@ -20,7 +20,8 @@ Access to an operating system capable of internet, browser and IDE access.
 
 ## OpenSea Demonstration
 * .png showin the 5 tokens sold:
-![Alt text](/OpenSeaRef.ong?raw=true "OpenSeaRef")
+<!-- ![Alt text](/OpenSeaRef.ong?raw=true "OpenSeaRef") -->
+![Screenshot](OpenSeaRef.png)
 
 
 ## Built With
