@@ -16,7 +16,8 @@ Access to an operating system capable of internet, browser and IDE access.
 ## Installing
 * Unzip project or clone from [Github](https://github.com/joeyBerger/Real-Estate-Token).
 * Navigate to the root folder and `cd eth-contracts/`. Start Ganache by running `ganache-cli`.
-* To test, start another terminal instance and `cd eth-contracts/`. Run `truffle test`, and all 3 javascript tests will commence.
+* 
+* To test, start another terminal instance and `cd eth-contracts/`. Run `npm install truffle-assertions` and `truffle test`, and all 3 javascript tests will commence.
 
 ## OpenSea Demonstration
 * .png showing 5 tokens sold:
